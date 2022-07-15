@@ -1,5 +1,5 @@
 # :computer: TIL 
-Today I Learned :books:
+:books: Today I Learned
 
 ## INDEX
 
