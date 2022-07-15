@@ -1,5 +1,5 @@
 # TIL
-Today I Learned
+Today I Learned :thought_balloon:
 
 ## INDEX
 
