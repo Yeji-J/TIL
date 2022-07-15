@@ -115,6 +115,7 @@ cf) 브랜치 : 커밋이 쌓이고 있는 하나의 큰 흐름
   ![Untitled](README.assets/Untitled.png)
 
 - **Merging** : Conflict가 난 것을 하나로 합치는 것
+  
   ![Untitled](README.assets/11)
 
 ---
