@@ -112,7 +112,9 @@ cf) 브랜치 : 커밋이 쌓이고 있는 하나의 큰 흐름
 
 `git log`
 
-commit 히스토리![Untitled](README.assets/Untitled-16578586579955.png)
+ commit 히스토리
+
+![Untitled](README.assets/Untitled-16578586579955.png)
 
 commit 78d1bb86~ 커밋 고유 아이디 (앞의 네자리만 적어줘도  commit 구분 가능)
 
