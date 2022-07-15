@@ -108,7 +108,7 @@ cf) 브랜치 : 커밋이 쌓이고 있는 하나의 큰 흐름
 
 `pull` github 변경사항 local로 가져오기
 
-- **Conflic**t : local 파일과 github이 충돌했을 때 → 내가 원하는 최종 상태로 파일 수정
+- **Conflict** : local 파일과 github이 충돌했을 때 → 내가 원하는 최종 상태로 파일 수정
 
   HEAD | local에 있는 내용   Incoming Change | 불러온 내용 
 
