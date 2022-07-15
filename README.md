@@ -1,4 +1,4 @@
-# Git
+Git
 
 - 분산(↔중앙집중) 버전 관리 프로그램
 
@@ -102,22 +102,7 @@ cf) 브랜치 : 커밋이 쌓이고 있는 하나의 큰 흐름
 
 `git push origin master`
 
----
-
-### PULL
-
-`pull` github 변경사항 local로 가져오기
-
-- **Conflic**t : local 파일과 github이 충돌했을 때 → 내가 원하는 최종 상태로 파일 수정
-
-  HEAD | local에 있는 내용   Incoming Change | 불러온 내용 
-
-  ![Untitled](README.assets/Untitled.png)
-
-- **Merging** : Conflict가 난 것을 하나로 합치는 것
-![Untitled](README.assets/11)
-
----
+------
 
 ### 참조
 
@@ -140,16 +125,3 @@ commit 78d1bb86~ 커밋 고유 아이디 (앞의 네자리만 적어줘도  comm
 `ctrl ,` : 설정
 
 `code .` : 그 자리에서 vsc열기
-
----
-**CLI로 파일 수정**
-
-`vi 파일명`
-
-*`i`* ; insert 입력
-
-`esc` : 입력모드 해제
-
-`:wq` : write quit 파일 쓰기 그만 
-
-`:q` : 파일 수정모드 나오기
