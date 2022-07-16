@@ -118,39 +118,3 @@ cf) 브랜치 : 커밋이 쌓이고 있는 하나의 큰 흐름
   
   ![Untitled](README.assets/11)
 
----
-
-### 참조
-
-`git status`
-
-뭐가 잘못됐는지, 어떻게 해야되는지도 알려줌
-
-`git log`
-
- commit 히스토리
-
-![Untitled](README.assets/Untitled-16578586579955.png)
-
-commit 78d1bb86~ 커밋 고유 아이디 (앞의 네자리만 적어줘도  commit 구분 가능)
-
-`git diff 커밋고유아이디네자리` : 앞을 기준으로 뒤가 어떻게 됐는지 history 보여줌 → 보기 불편해서 다른 프로그램 사용 ~
-
-`ctrl shift +`  ` : 터미널 실행
-
-`ctrl ,` : 설정
-
-`code .` : 그 자리에서 vsc열기
-
----
-**CLI로 파일 수정**
-
-`vi 파일명`
-
-*`i`* ; insert 입력
-
-`esc` : 입력모드 해제
-
-`:wq` : write quit 파일 쓰기 그만 
-
-`:q` : 파일 수정모드 나오기
