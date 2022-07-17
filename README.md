@@ -6,4 +6,4 @@
 - ##### [Git](https://github.com/Yeji-J/TIL/blob/master/Git.md)
 - ##### [CLI](https://github.com/Yeji-J/TIL/blob/master/CLI.md)
 - ##### [Markdown](https://github.com/Yeji-J/TIL/blob/master/Markdown.md)
-- ##### [Markdown](https://github.com/Yeji-J/TIL/blob/master/Algorithm.md)
+- ##### [Algorithm](https://github.com/Yeji-J/TIL/blob/master/Algorithm.md)
