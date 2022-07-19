@@ -1,4 +1,4 @@
-### CLI ; Command Line Interface
+## CLI ; Command Line Interface
 
 - **명령어를 통해** 사용자와 컴퓨터가 상호 작용
 - 컴퓨터에게 명령을 내리는 방법 두 가지 → GUI, CLI
@@ -33,7 +33,7 @@
 
 commit 히스토리
 
-![Untitled](README.assets/Untitled-16578586579955.png)
+![Untitled](CLI.assets/Untitled-16578586579955.png)
 
 commit 78d1bb86~ 커밋 고유 아이디 (앞의 네자리만 적어줘도 commit 구분 가능)
 
@@ -61,7 +61,7 @@ _`i`_ ; insert 입력
 
 ---
 
-![image-20220715133050387](CLI/CLI.assets/image-20220715133050387.png)
+![image-20220715133050387](CLI.assets/image-20220715133050387.png)
 
 ### 절대경로 VS 상대경로
 

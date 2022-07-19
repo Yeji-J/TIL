@@ -1,4 +1,4 @@
-### Markdown
+## Markdown
 
 - 텍스트 기반 가벼운 마크업(markup) 언어
 
@@ -23,4 +23,4 @@
 
 - Converter에 따라 작동 여부 상이
 
-  ![image-20220715133157236](Markdown/Markdown.assets/image-20220715133157236.png)
+  ![image-20220715133157236](Markdown.assets/image-20220715133157236.png)

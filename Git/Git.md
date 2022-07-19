@@ -55,13 +55,11 @@
 
 ### Repository
 
-- 특정 디렉토리를 버전 관리하는
+![Untitled](GIT.assets/Untitled-16578586192994.png)
 
-  저장소
+- 특정 디렉토리를 버전 관리하는 저장소
 
   - `git init` 명령어로 로컬 저장소 생성
-
-![Untitled](Git/README.assets/Untitled-16578586192994.png)
 
 - `git.`
 
@@ -70,7 +68,7 @@
   - 윈도우에서 파일 앞에 `.` 이 붙으면 숨김 기능
   - 숨김 파일 == 건들 필요 없음 ^^
 
-![Untitled](Git/README.assets/Untitled-16578586192994.png)
+
 
 ---
 
@@ -106,8 +104,8 @@ cf) 브랜치 : 커밋이 쌓이고 있는 하나의 큰 흐름
 
   HEAD | local에 있는 내용 Incoming Change | 불러온 내용
 
-  ![Untitled](Git/README.assets/Untitled.png)
+  ![Untitled](GIT.assets/Untitled.png)
 
 - **Merging** : Conflict가 난 것을 하나로 합치는 것
 
-  ![Untitled](Git/README.assets/11)
+  ![Untitled](GIT.assets/11)
