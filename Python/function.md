@@ -17,6 +17,7 @@
   - parameter가 있는 경우 `함수명(parameter)`
 - 함수는 parameter을 넘겨줄 수 있음
 - 동작 후에 `return` 을 통해 결과값 전달
+  - 함수는 단 하나의 값만 `return`
 
 ```python
 def first_function(parameter):
@@ -25,7 +26,7 @@ def first_function(parameter):
 ```
 
 - 문서화 (Docstring)
-- 범위 ( Scope)
+
 
 ### 결과값 (Output)
 
@@ -65,7 +66,7 @@ def first_function(parameter):
   print(ans) # 15
   ```
 
-⇒ `Jupyte`r와 같은 REPL(Read-Eval_Loop) 환경에서는 마지막으로 작성된 코드의 리턴 값을 보여주므로 **같은 동작을 하는 것을 착가할 수 있으니 주의** !!
+⇒ `Jupyter`와 같은 REPL(Read-Eval_Loop) 환경에서는 마지막으로 작성된 코드의 리턴 값을 보여주므로 **같은 동작을 하는 것 같이 착각할 수 있으니 주의 !!**
 
 ---
 
@@ -74,6 +75,8 @@ def first_function(parameter):
 : return은 항상 하나의 값 만을 반환 → 두 개의 값을 반환하고 싶을 땐?
 
 - **튜플을 활용해 두 개 이상의 값 반환**
+  - 리턴하는 값을 그대로 보존하기 위해 튜플로 반환
+  - 소괄호로 묶지 않아도 python이 알아서 튜플로 리턴
 
 ```python
 def minus_and_product(x, y):
@@ -86,80 +89,88 @@ print(type(y)) <class 'tuple'>
 
 ---
 
-**To sum up …**
+#### **To sum up …**
 
 - `return` X → `None`
 - `return` 0 → **하나를 반환**
+=> **여러 개**를 원하면 **튜플 혹은 리스트와 같은 컨테이너 활용**
+```python
+def cake():
+  print('tasty')
 
-                       → **여러 개**를 원하면 **튜플 혹은 리스트와 같은 컨테이너 활용**
+desert = cake()
+print(desert)
+
+# None
+```
 
 ---
 
 ### 함수의 입력 Input
 
-`Parameter` : 함수를 **정의**할 때 함수 내부에서 사용되는 변수
+1. `Parameter` `매개변수` `인수`: 함수를 **정의**할 때 함수 내부에서 사용되는 변수
 
-`Argument` : 함수를 **호출**할 때 넣어주는 값
+2. `Argument` `인자`: 함수를 **호출**할 때 넣어주는 값
 
-- 함수 호출 시 함수의 parameter를 통해 전달되는 값
-- Argument는 소괄호 안에 할당 `function(argument)`
-  - 필수 Argument : 반드시 전달되어야 하는 값
-  - 선택 Argumetnt : 값을 전달하지 않아도 되는 경우는 기본값이 전달됨
-- **Positional Arguments : 기본!!**
-  : **기본적으로** 함수 호출 시 Argument는 **위치에 따라 함수 내에 전달**됨
+  - 함수 호출 시 함수의 parameter를 통해 전달되는 값
+  - Argument는 소괄호 안에 할당 `function(argument)`
+    - 필수 Argument : 반드시 전달되어야 하는 값
+    - 선택 Argumetnt : 값을 전달하지 않아도 되는 경우는 기본값이 전달됨
+  - **Positional Arguments : 기본!!**
+    : **기본적으로** 함수 호출 시 Argument는 **위치에 따라 함수 내에 전달**됨
 
-  ```python
-  def add(x, y):
-  	 return x + y
+    ```python
+    def add(x, y):
+      return x + y
 
-  add(2, 3) # x = 2, y = 3
-  ```
+    add(2, 3) # x = 2, y = 3
+    ```
 
-- **Keyword Arguments**
-  : 직접 변수의 이름으로 특정 Argument 전달 가능
-  : **Keyword Argument 다음에 Positional Arugment를 활용할 수 없음**
+  - **Keyword Arguments**
+    : 직접 변수의 이름으로 특정 Argument 전달 가능
+    : **Keyword Argument 다음에 Positional Arugment를 활용할 수 없음**
 
-  ```python
-  def add(x, y):
-  	return x + y
+    ```python
+    def add(x, y):
+      return x + y
 
-  add(x = 2, y = 5)
-  add(2, y = 5)
-  **add (x, y = 5) # Error !!**
-  ```
+    add(x = 2, y = 5)
+    add(2, y = 5)
+    **add (x, y = 5) # Error !!**
+    ```
 
-- **Default Arguments Values**
-  : **기본값을 지정**하여 함수 호출 시 Argument 값을 설정하지 않도록 함
-  : 정의된 것보다 더 적은 개수의 Argument로 호출될 수 있음
+  - **Default Arguments Values**
+    : **기본값을 지정**하여 함수 호출 시 Argument 값을 설정하지 않도록 함
+    : 정의된 것보다 더 적은 개수의 Argument로 호출될 수 있음
 
-  ```python
-  def add(x, y = 0):
-  	return x + y
+    ```python
+    def add(x, y = 0):
+      return x + y
 
-  add(2) # y는 미리 지정됨
-  ```
+    add(2) # y는 미리 지정됨
+    ```
 
-- 정해지지 않은 여러개의 Arguments 처리
+  - 정해지지 않은 여러개의 Arguments 처리
 
-  - `**print()` : `애스터리스크(Asterisk)` 혹은 언패킹 연산자로 불리는 `*` 덕분 !\*\*
-  - 가변 인자 만들기 가능
+    - `**print()` : `애스터리스크(Asterisk)` 혹은 언패킹 연산자로 불리는 `*` 덕분 !\*\*
+    - 가변 인자 만들기 가능
 
-  ```python
-  print('you', 'are', 'cute')
-  # youarecute
+    ```python
+    print('you', 'are', 'cute')
+    # youarecute
 
-  def func(*args):
-  	print(args)
+    def func(*args):
+      print(args)
 
-  func(1, 2, 3, 'a') # (1, 2, 3, 'a') # 튜플로 반환
-  # 언패킹시 리스트로 반환
-  ```
+    func(1, 2, 3, 'a') # (1, 2, 3, 'a') # 튜플로 반환
+    # 언패킹시 리스트로 반환
+    ```
 
-- **가변인자 `*args`**
-  : 여러 개의 Positional Argument를 하나의 필수 parameter로 받아서 사용
-  : 몇 개의 Pisitional Argument를 받을지 모르는 함수를 정의할 때 유용
+  - **가변인자 `*args`**
+    : 여러 개의 Positional Argument를 하나의 필수 parameter로 받아서 사용
+    : 몇 개의 Pisitional Argument를 받을지 모르는 함수를 정의할 때 유용
   ***
-  **To understand what 가변인자 is …**
+  #### **To understand what 가변인자 is …**
   - 패킹 : 여러 개의 데이터를 묶어서 변수에 할당하는 것
   ```python
   numbers = (1, 2, 3, 4, 5)
@@ -174,7 +185,7 @@ print(type(y)) <class 'tuple'>
   print(a, b, c, d, e)
   ```
   ```python
-  numbers = (1, 2, 3, 4, 5)
+  numbers = (1, 2, 3, 4, 5) # 5개 초과의 변수에는 할당 불가 작거나 같아야 함
   **a, *rest, b = numbers # asterisk(*)**
   # a = 1 b = 5 rest = [2, 3, 4]
   ```
@@ -201,7 +212,7 @@ print(type(y)) <class 'tuple'>
   print_family_name('아부지', '어무니', '멍멍이', '냥냥이')
   ```
 
-- **가변 키워드 인자 `(**kwargs)`\*\*
+- 가변 키워드 인자 `(**kwargs)`
 
   - **딕셔너리**로 묶여 처리되며, parameter에 `**` 를 붙여 표현
 
@@ -226,7 +237,7 @@ print(type(y)) <class 'tuple'>
   print_family_name('john', 'daisy', dog = 'tom', cat = 'cathy')
   ```
 
-- **가변 인자 `(*args)`와* 가변 키워드`*(**kwargs)` 인자 동시 사용 가능\*\*
+- 가변 인자 `(*args)`와 가변 키워드`(**kwargs)` 인자 동시 사용 가능
 
   ```python
   def print_family_name(*parents, **pets):
@@ -272,6 +283,7 @@ print(type(y)) <class 'tuple'>
 - `Built-in Scope` : 정의하지 않고 사용할 수 있는 모든 것 ex) `print()`
 
 ⇒ 함수 내에서는 바깥 Scope의 변수에 접근 가능하나 수정은 할 수 없음 !
+⇒ **안에서 밖으로**
 
 ![Untitled](python.assets/scope)
 
@@ -314,7 +326,7 @@ def func1():
 # SyntaxError: name 'a' is used prior to global declaration
 ```
 
-1. `nonlocal` : global을 제외하고 가장 가까운 scope의 변수를 연결하도록 함
+2. `nonlocal` : global을 제외하고 가장 가까운 scope의 변수를 연결하도록 함
 
    - global과 달리 이미 존재하는 이름과의 연결만 가능
 
@@ -334,7 +346,7 @@ def func1():
 
 ---
 
-**함수의 범위** **주의 !**
+#### **함수의 범위** **주의 !**
 
 1. 해당 scope에 변수가 없는 경우 LEGB Rule에 의해 이름 검색
    1. 변수 접근은 가능 but 해당 변수 수정 불가
@@ -343,6 +355,7 @@ def func1():
 2. 상위 scope에 있는 변수를 수정하고 싶다면 `gloabl` `nonlocal` 키워드 활용
    1. 코드가 복잡해지면 변수 변경 추척이 어렵고 오류 발생 가능성 상승
    2. 사용을 지양하는 것을 권장, **함수로 값을 바꾸고자 한다면 항상 argument로 넘기고 리턴 값을 사용하기**
+---
 
 ## 함수 응용
 
@@ -374,6 +387,7 @@ print(list(result)) # [1, 3]
 `zip(*iterables)`
 
 : 복수의 iterable을 모야 **튜플**을 원소로 하는 zip object 반환
+* 원수의 개수가 똑같아야 함
 
 ```python
 girls = ['yeji', 'jane']
@@ -417,8 +431,9 @@ def factorial(n):
 	else:
 		return n * factorial(n-1)
 
-print(factorial(4)) $ 24
+print(factorial(4)) # 24
 ```
-
+- 재쉬 함수는 가급적 사용 지양
+- 모든 재귀함수는 반복문으로 표현 가능
 - 메모리 스택이 넘치게 되면 프로그램 동작 불가
 - 파이썬의 최대 재귀 깊이는 1000번으로, 호출 횟수가 이를 넘어가면 `Recursion Error` 발생

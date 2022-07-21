@@ -95,6 +95,10 @@ print(result)
 - `for` : 반복 가능한 객체를 모두 순회하면 종료 (별도의 종료 조건 필요 X)
 - 반복 제어 : `break` `continue` `for-else`
 
+범위가 정해져 있으면 `for`, 특정 조건을 만족하는 한 실행하고 싶을 땐 `while`
+
+---
+
 ### `While`
 
 : 조건이 참인 경우 반복적으로 코드 실행
@@ -122,7 +126,7 @@ while a < 3:
 
 `for` 변수명 `in` iterable
 
-: 시퀀스를 포함한 순회 가능한 객체(iterable)의 요소를 모두 순회
+:시퀀스를 포함한 순회 가능한 객체(iterable)의 요소를 모두 순회
 
 - 처음부터 끝까지 모두 순회하므로 별도의 조건 종료 필요 X
 - Iterable
@@ -180,8 +184,8 @@ for fruit in fruits:
   # (1, 'yeji')
   # (2, 'hwan')
 
-  for index, number in enumerate(members, start=1):
-  	print(index, number)
+  for index, member in enumerate(members, start=1):
+  	print(index, member)
 
   # (1, 'minsu')
   # (2, 'yeji')
@@ -227,9 +231,20 @@ for fruit in fruits:
 ### 반복문 제어
 
 - `break` : 반복문 종료
-- `continue` : `continue` 이후 코드 블록은 수행하지 않고 다음 반복을 수행
+- `continue` : `continue` 다음 코드 블록을 수행하지 않고 다음 반복을 수행
+  ```python
+  for i in range(6):
+    if i % 2 == 0:
+      continue
+    print(i)
+  
+  # 1 
+  # 3
+  # 5
+  ```
 - `for-else` : 끝까지 반복문을 실행한 이후에 `else` 문 실행
   - `break` 를 통해 중간에 종료되는 경우 `else` 문은 실행되지 않음
 - `pass` : 아무것도 하지 않음 (문법적으로 필요하지만 ,할 일이 없을 때 사용)
   - 특별히 할 일이 없을 때 자리를 채우는 용도로 사용
   - 반복문 아니어도 사용 가능
+  

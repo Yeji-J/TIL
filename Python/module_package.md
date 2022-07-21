@@ -10,11 +10,21 @@
 
 : 패키지 안에는 또 다른 서브 패키지 존재
 
+#### 가상환경
+: 버전 관리를 하는 곳
+- 하나의 컴퓨터 안에 여러 공간을 만듦
+  - A라면 => a, B라면 => b
+
 ### 모듈과 패키지 불러오기
 
 - `import` module
+  - `modle.var` `modul.function` 으로 사용
+  - `import` module `as name`
+    - 모듈 이름이 너무 길 경우 `as name` 처럼 임의로 이름을 붙여서 간단하게 콜
 - `from` module `import` var, function, Class
-- `from` module `import`\*
+  - `var()` `function()`로 사용
+- `from` module `import*` : 모듈 내 모든 함수 (or 변수) 가져오기
+  - `var()` `function()`로 사용
 - `from` package `import` module
 - `from` package.module `import` var, function, Class
 
