@@ -139,6 +139,7 @@ print(range(10)[1:5:3]) # range(1, 5, 3)
     - `.keys()`
     - `.values()`
     - `.items()`
+    - `dictionary[key]`
 
 ---
 
