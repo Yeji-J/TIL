@@ -1,7 +1,7 @@
 # :computer: TIL 
 :books: Today I Learned
 
-## INDEX
+## 📌INDEX
 
 - ### [Git (commit, pull, clone)](https://github.com/Yeji-J/TIL/blob/master/Git/Git.md)
     - #### [git ignore](https://github.com/Yeji-J/TIL/blob/master/Git/gitignore.md)
