@@ -9,10 +9,12 @@
 
 ![Untitled](GIT.assets/ignore1)
 
-1. `*.확장자` 로 해당 파일 종류 모두 ignore
+2. `*.확장자` 로 해당 파일 종류 모두 ignore
 
 ![Untitled](GIT.assets/ignore2)
 
+3. 특정 파일 하위 목록 모두 ignore
+![Untitled](GIT.assets/ignore8)
 ---
 
 #### Q. 파일의 하위 항목이 모두 ignore되어 파일 자체가 안 올라갈 때?
