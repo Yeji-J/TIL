@@ -4,7 +4,7 @@
 ## INDEX
 
 - ### [Git (commit, pull, clone)](https://github.com/Yeji-J/TIL/blob/master/Git/Git.md)
-    - ##### [git ignore] ()
+    - ##### [git ignore] (https://github.com/Yeji-J/TIL/blob/master/Git/gitignore.md)
 - ### [CLI](https://github.com/Yeji-J/TIL/blob/master/CLI/CLI.md)
 - ### [Markdown](https://github.com/Yeji-J/TIL/blob/master/Markdown/Markdown.md)
 - ### Python
