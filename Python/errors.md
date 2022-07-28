@@ -1,13 +1,5 @@
 ## 에러와 예외 처리
 
-### 디버깅
-
-- print 활용
-- 개발환경에서 제공하는 기능 활용
-  - breakpoint, 변수 조회 등
-- python tutor 활용(단순 파이썬 코드인 경우)
-- 뇌컴파일, 눈디버깅
-
 ### 문법 에러(Syntax Error)
 
 - 파일이름, 줄번호, ^문자를 통해 파이썬이 코드를 읽어 나갈 때(parser) 문제가 발생한 위치를 표현
@@ -27,3 +19,9 @@ assign to literal 잘못된 할당
   - Name Error, TypeError 등
 - 모든 내장 예외는 Exception Class를 상속받아 이뤄짐
 - 사용자 정의 예외를 만들어 관리할 수 있음
+
+except 가장 작은 수준의 error 부터
+순
+서
+대
+로

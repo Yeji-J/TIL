@@ -1,22 +1,20 @@
-# 객체지향 프로그래밍 OOP
+## 객체지향 프로그래밍 OOP
 
-**Object-Oriented Programming**
+#### **Object-Oriented Programming**
 
 - 컴퓨터 프로그래밍 방법론(패러다임) 중 하나
 - 컴퓨터 프로그램을 명령어의 목록으로 보는 시각에서 벗어나 여러개의 독립된 단위, 객체 간의 상호작용으로 파악
 
 ### Object
 
-### 과거 | 절차지향 프로그래밍
-
-문제점
+#### 과거 | 절차지향 프로그래밍
 
 - 하나를 바꾸면 연달아서 바꿔야 해서 문제가 많이 발생
 
-### 현재 | 객체지향 프로그래밍
+#### 현재 | 객체지향 프로그래밍
 
 - Object 간 상호작용
-  - Data → methods
+  - data → methods
 - 장점
   - 클래스 단위로 모듈화시켜 개발 가능 ⇒ 대규모 소프트웨어 개발에 적합
   - 필요한 부분만 수정 가능 ⇒ 프로그램 유지보수 용이
@@ -36,22 +34,16 @@
 
 변수, 자료 구조, 함수, 메서드가 될 수 있다
 
-### 체와 인스턴스
+### 객체와 인스턴스
 
 : 클래스로 만든 객체를 인스턴스라고도 함
 
-객체는 **특정 타입**의 인스턴스
+- 객체는 **특정 타입/특정 클래스**의 인스턴스
 
-**특정 클래스**의 인스턴스
-
----
-
-**클래스**(가수라는 개념)와 **객체**(실제 사례)
-
-클래스를 만든다 == 타입을 만든다
+- **클래스**(가수라는 개념)와 **객체**(실제 사례)
 
 ```python
-[3,2,1].sort() == **객체.행동()**
+[3,2,1].sort() == 객체.행동()
 ```
 
 ```python
@@ -68,8 +60,6 @@
 - 속성(.attribute) : 어떤 상태(데이터)를 가지는가?
 - 조작법(method) : 어떤 행위(함수)를 할 수 있는가?
 - **객체 = 속성(attribute) + 기능(method)**
-
-**객체는 특정 타입의 인스턴스다.**
 
 ```python
 123, 900, 5는 int의 인스턴스
@@ -89,23 +79,21 @@
 ### 클래스와 인스턴스
 
 - 객체의 설계도(클래스)를 가지고, 객체(인스턴스)를 생성
-- 클래스 : 객체의 분류, 설계도
+- 클래스 : 객체의 분류, 설계도, **클래스 이름은 반드시 대문자로 시작**
 - 인스턴스 : 하나하나의 실체, 예
-
-⇒ 파이썬은 모든 것이 객체, 모든 객체는 특정 타입의 인스턴스
 
 ### 객체 비교하기
 
-`==`
+#### `==`
 
 - `equal`
-- **변수가 참조하는 객체가 내용이 같은 경우** True
-- 두 객체가 같아 보이지만 실제로 동일한 대상을 가리키고 있다고 확인해 준 것은 아님
+- **값이 같은 경우** `True`
+- 같아 보이지만 실제로 동일한 대상을 가리키고 있는 것은 아님
 
-`is`
+#### `is`
 
 - `identical`
-- **두 변수가 동일한 객체를 가리키는 경우** True
+- **같은 메모리 주소를 share하는 경우** `True`
 
 ```python
 a = [1, 2, 3]
@@ -136,14 +124,11 @@ person1 = Person('지민')
 print(person1.name) # 지민
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f72853d-3fba-477e-96ef-b45328e1c786/Untitled.png)
-
 ### 인스턴스 변수
 
-- **인스턴스가 개인적으로 가지고 있는 속성(attribute)**
-- **각 인스턴스의 고유한 변수**
+- **각 인스턴스가 가지는 변수**
 - 생성자 메서드 `__init__` 에서 `self.<name>` 으로 정의
-- 인스턴스가 생성된 이후 `<instance>.<name>` 으로 점근 및 할당
+- 인스턴스가 생성된 이후 `<instance>.<name>` 으로 접근 및 할당
 
 ```python
 class Person:
@@ -160,7 +145,7 @@ print(person1.name) # 지민
 ### 클래스 변수
 
 - 한 클래스의 모든 인스턴스가 공유하는 값
-- 클래스 선언 내부에서 정의
+- ex. 사용자가 몇 명인지 확인하고 싶을 때
 - `<classname>.<name>` 으로 접근 및 할당
 
 ```python
@@ -168,7 +153,7 @@ class Circle():
 	pi = 3.14 # 클래스 변수 정의
 
 	def __init__(self, name):
-			self.name = name # 인스턴스 변수
+		self.name = name # 인스턴스 변수
 
 c1 = Circle(5)
 c2 = Circle(10)
@@ -188,19 +173,17 @@ print(Circle.pi) # 3.14 클래스 변수
 print(c1.pi) # 3.14 클래스 변수
 print(c2.pi) # 5 새로운 인스턴스 변수 생성
 ```
-
-### OOP 메서드
+---
+## OOP 메서드
 
 - 특정 데이터 타입/클래스의 객체에 공통적으로 적용 가능한 행위(함수)
 - 클래스 안에 있는 함수
 
----
+`인스턴스 메서드` : 인스턴스 처리
 
-인스턴스 메서드 : 인스턴스 처리
+`@클래스메서드` : 클래스 처리
 
-클래스 메서드 : 클래스 처리
-
-정적 메서드 : 나머지 처리
+`@정적메서드`: 나머지 처리
 
 ```python
 class Person:
@@ -217,19 +200,15 @@ person1.eat('피자') # 피자를 냠냠
 
 ### 인스턴스 메서드
 
-- 인스턴스 변수를 사용하거나, 인스턴스 변수에 값을 설정
-- 클래스 내부에 정의되는 메서드의 기본
 - **호출 시 ,첫번 째 인자로 인스턴스 자기자신 `self` 전달**
 - `self` 가 있으면 인스턴스 메서드
   - `self` : 인스턴스 자기 자신
-  - 파이썬에서 인스턴스 메서드는 호출 시 첫 번째 인자로 인스턴스 자신이 전달되게 설계
-    - 매개변수 이름으로 `self` 를 첫 번째 인자로 정의
-    - 다른 단어로 써도 되지만 파이썬 암묵적 규칙
+  - 인스턴스 메서드 호출 시 매개변수 이름으로 `self` 를 첫 번째 인자로 정의
+    - 파이썬 암묵적 규칙
 
 ### 생성자(constructor) 메서드
 
-- 인스턴스 객체가 생성될 때 자동으로 호출되는 메서드
-- 인스턴스 변수의 초기값을 설정
+- 인스턴스 객체가 **생성**될 때 자동으로 호출되는 메서드
   - 인스턴스 생성
   - `__init__` 메서드 자동 호출
 
@@ -247,16 +226,15 @@ person1 = Person() # 인스턴스가 생성되었습니다.
 - Double underscore `__` 가 있는 메서드는 특수한 동작을 위해 만들어진 메서드로, 스페셜 메서드 혹은 매직 메서드라고 불림
 - 특정 상황에서 자동으로 불리는 메서드
 - 예시
-  - `__str__` 해당 객체의 출력 형태 지정
-    - 프린트 함수 호출 시 자동으로 호출
-    - 어떤 인스턴스를 출력하면 `__str__` 의 `return` 값이 출력
+  - `__str__` 클래스를 출력했을 때 `return`할 값 지정
+	- 어떤 인스턴스를 출력하면 `__str__` 의 `return` 값이 출력
   - `__gt__` 부등호 연산자(>, greater than)
 
 ```python
 class Circle:
 
-	def __init__(self, r):
-		self.r = r
+	def __init__(self, r): # self에는 인스턴스 변수 자체가 넘어감
+		self.r = r 
 
 	def area(self):
 		return 3.14 * self * self.r
@@ -303,39 +281,37 @@ class Person:
 		self.name = name
 		Person.count += 1
 
-@classmethod
-def number_of_population(cls):
-	print(f'인구수 {cls.count}입니다.')
+	@classmethod
+	def number_of_population(cls): # 클래스 자체가 넘어옴
+		print(f'인구수 {cls.count}입니다.')
 
 person1 = Person('아이유')
-print(Person.count) #
+print(Person.count) # 인구수 1입니다.
 
 ```
-
-### **여기나오는예씨아직몰 ㅁ!!!**
 
 ---
 
 ### 데코레이터
 
-- 함수를 어떤 함수로 꾸며서 새로우 기능 부여
-- `@데코레이타(함수명)` 형태로 함수 위에 작성
+- 함수를 어떤 함수로 꾸며서 `return`
+- `@데코레이터(함수명)` 형태로 함수 위에 작성
 - 순서대로 적용되기 때문에 작성 순서가 중요
 - 데코리이터를 활용하면 쉽게 여러 함수를 원하는대로 변경할 수 있음
 
 ```python
 def add_print(original): # 파라미터로 함수 받기
-	def wrapper(): # 함수 내에서 새로운 함수 선언
+	def wrapper(): # 들어온 함수 꾸며주는 함수
 		print('start') # 부가기능 -> original을 꾸민다
 		original()
 		print('end') # 부가기능 -> original을 꾸민다
-	return wrapper
+	return wrapper # wrapper 함수 리턴
 
 @add_print
 def print_hello():
-	print('hello')
+	print('hello') # print 함수 original로 넘어감
 
-print_hello()
+print_hello() # wrapper가 실행됨
 # start
 # hello
 # end
@@ -371,11 +347,12 @@ def check_rich(money) # 스태틱은 cls, self 사용 X
 	return money > 10000
 
 person1 = Person('아이유')
+# 하나의 클래스에 종속시키고 싶을 때 이용
 print(Person.check_rich(1000000)) # True : 스태틱은 클래스로 접근 가능
 print(person1.check_rich(200000)) # True : 스태틱은 인스턴스로 접근 가능
 ```
 
-### 인스턴스와 클래스 간의 이름 공간(namespace)
+### 인스턴스와 클래스 간의 이름공간(namespace)
 
 - 클래스 정의 시 클래스와 해당하는 이름 공간 생성
 - 인스턴스 만들면 인스턴스 객체가 생성되고 이름 공간 생성
@@ -438,21 +415,21 @@ class Professor(Person): # Person 클래스 상속
 		self.department = department
 
 class Student(Person):
-	def __init__(self, name, agem goa):
+	def __init__(self, name, age, gpa):
 			self.name = name
 			self.age = age
 			self.gpa = gpa
 
 p1 = Professor('Lee', 45, 'Computer Science')
-s1 = Student('Kim', 23, 3.5
+s1 = Student('Kim', 23, 3.5)
 
 # 부모 Person 클래스의 talk 메서드 활용
 p1.talk() # 반갑습니다. Lee입니다.
 s1.talk() # 반갑습니다. Kim입니다.
 ```
 
-- `isinstance(object, classinfo)`
-  - classinfo의 instance거나 **subclass**인 경우 True
+#### `isinstance(object, classinfo)`
+  - classinfo의 instance거나 **subclass**인 경우 `True`
 
 ```python
 class Person:
@@ -485,10 +462,10 @@ print(isinstance(p1, Person)) # True
 print(isinstance(s1, Person)) # True
 ```
 
-- `issubclass(class, classinfo)`
-  - class가 classinfo의 subclass면 True
-- `super()`
-  - 자식 클래스에서 부모 클래스를 사용하고 싶은 경우
+#### `issubclass(class, classinfo)`
+  - class가 classinfo의 subclass면 `True`
+#### `super()`
+  - 자식 클래스에서 상속 받은 부모 클래스를 사용하고 싶은 경우
 
 ```python
 class Person:
@@ -501,6 +478,7 @@ class Person:
 class Student(Person):
 	def __init__(self, name, age, number, email, student_id):
 		# Person 클래스
+		# 보통 생성자 안에 많이 적음
 		super().__init__(name, age, number, email)
 		self.student_id = student_id
 ```
@@ -509,10 +487,9 @@ class Student(Person):
 
 ### 상속 정리
 
-- 파이썬의 모든 클래스는 object로부터 상속
 - 부모 클래스의 모든 요소가 상속
-- `super()` 를 통해 부모 클래스의 요소 가능
-- 메서드 오버라이딩을 통해 자식 클래스에 재정의 가능
+- `super()` 를 통해 부모 클래스의 요소 사용 가능
+- `메서드 오버라이딩`을 통해 자식 클래스에 재정의 가능
 - 상속 관계에서 이름 공간은 `인스턴스 > 자식 클래스 > 부모 클래스` 순으로 탐색
 - `mro` 메서드 (Method Resolution Order)
   - 해당 인스턴스의 클래스가 어떤 부모 클래스를 가지는 확인
@@ -549,8 +526,9 @@ class Dad(Person):
 
 class FirstChild(Dad, Mom):
 # Dad 클래스가 먼저 상속되었으므로
+# font-family 같이 선례한 클래스에 없으면 다음으로, 그 다음으로
 	def swim(self):
-		return 'FirstChild is swimming'
+		return 'FirstChild is swimming' # Mom 메서드 오버라이딩
 
 	def cry(self):
 		return 'FirstChild is crying'
@@ -560,7 +538,7 @@ print(baby1.cry()) # FirstChild is crying
 print(baby1.swim()) # FirstChild is swimming
 # Dad 클래스의 속성 출력
 print(baby.walk()) # Dad is walking
-print(baby.gene)) # XY
+print(baby.gene) # XY
 ```
 
 ---
@@ -570,41 +548,38 @@ print(baby.gene)) # XY
 - 동일한 메서드가 클래스에 따라 다르게 행동할 수 있음
 - 서로 다른 클래스에 속하는 객체들이 **동일한 메세지에 대해 다른 방식으로 응답**할 수 있음
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c786d406-374c-4fa4-bdc5-b13ae4192ad9/Untitled.png)
+#### 매서드 오버라이딩
 
-### 매서드 오버라이딩
-
-- 상속받은 메서드를 재정의
+- 상속받은 메서드를 `재정의`
 - 부모 클래스 메서드의 이름과 기본 기능은 그대로 사용하지만, **특정 기능을 바꾸고 싶을 때** 사용
   - 상속 받은 클래스에서 같은 이름의 메서드로 덮어씀
   - 부모 클래스의 메서드를 실행시키고 싶은 경우 `super` 활용
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ccf73bd5-85f9-4002-b7d1-31873fefa3fb/Untitled.png)
 
 ---
 
 ### 캡슐화
 
-- 객체의 일부 구현 내용에 대해 외부로부터으 ㅣ직접적인 엑세스를 차단 == 민감한 정보 숨기는 것
+- 객체의 일부 구현 내용에 대해 외부로부터의 직접적인 엑세스를 차단 == 민감한 정보 숨기는 것
   - ex. 주민번호
 - 공식적으로는 존재하지 않음, 암묵적으로 존재
-- **Public Access Modifier**
+#### **Public Access Modifier**
   - 언더바 없이 시작하는 메서드나 속성
-  - 어디서나 호출이 가능, 하위 클래스 override 허용
-  - 가져와서 아무나 다 쓸 수 있음
+  - 클래서 외부에서 언제, 누구든 호출이 가능, 하위 클래스 오버라이딩 허용
     ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/20a5b460-e38d-46da-9384-a3cb902ee805/Untitled.png)
-- **Protected Access Modifier**
+#### **Protected Access Modifier**
   - 언더바 1개로 시작하는 메서드나 속성
   - 암묵적 규칙에 의해 부모 클래스 내부와 자식 클래스에서만 호출 가능
   - 하위클래스 override 허용
-- **Private Access Modifier**
+	- 클래스 외부에서 수정 불가(하지만 python에서는 로직상 문제X)
+#### **Private Access Modifier**
   - 언더바 2개로 시작하는 메서드나 속성
-  - 본 클래스 내부에서만 사용 가능
+  - 본 클래스 내부에서만 사용 가능 **외부에서 접근 및 수정 절대 불가**
   - 하위클래스 상속 및 호출 불가능 `오류`
-  - 외부 호출 불가능`오류`
-- getter setter 메서드 (다이렉트로 데이터에 접근하는 것을 막기위해)
-  - 변수에 접근할 ㅅ ㅜ있는 메서드 별도 생성
-    - getter 변수 값ㅇ르 읽는 메서드
-      - @property 데코레이터 사용
-    - setter 변수 값 설정
-      - @변수.setter 사용
+  - 외부 호출 불가능 `오류`
+#### `getter` `setter` 메서드 (다이렉트로 데이터에 접근하는 것을 막기위해)
+  - 변수에 접근할 수 있는 메서드 별도 생성
+    - `getter` 변수 값을 읽는 메서드
+      - `@property` 데코레이터 사용
+    - `setter` 변수 값 설정
+      - `@변수.setter` 사용
+
