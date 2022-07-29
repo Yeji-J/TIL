@@ -15,4 +15,6 @@
     - ##### [함수](https://github.com/Yeji-J/TIL/blob/master/Python/function.md)
     - ##### [모듈과 패키지](https://github.com/Yeji-J/TIL/blob/master/Python/module_package.md)
     - ##### [자료 구조](https://github.com/Yeji-J/TIL/blob/master/Python/data_structure.md)
+    - ##### [객체지향 프로그래밍(OOP)](https://github.com/Yeji-J/TIL/blob/master/Python/ood.md)
+    - ##### [에러와 예외처리](https://github.com/Yeji-J/TIL/blob/master/Python/errors.md)
 - ### [Algorithm](https://github.com/Yeji-J/TIL/tree/master/Algorithm)
