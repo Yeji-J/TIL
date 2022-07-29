@@ -253,7 +253,35 @@ print(c2) # [원] radius : 1
 print(c1 > c2) # True
 ```
 
-### 소멸자(destructor) 메서드
+#### `__str__`
+
+- 해당 객체의 출력 형태를 임의로 지정하고 싶을 때
+- 프린트 함수를 호출할 때, `__str__`의 `return` 값 출력
+
+```python
+class Frozen:
+  def __init__(self, name):
+    self.name = name
+
+  def __str__(self):
+    return f'{self.name} says \'I like warm hugs:)\''
+
+olaf = Frozen('Olaf')
+print(olaf) # Olaf says 'I like warm hugs:_'
+```
+
+#### `__repr__`
+
+- 어떤 객체의 pintable representation을 문자열의 형태로 반환
+
+```python
+import math
+
+repr(3) # '3'
+repr(math) #"<module 'math' from ...>"
+```
+
+##### 소멸자(destructor) 메서드
 
 - 인스턴스 객체가 소멸(파괴)되기 직전에 호출되는 메서드
 
@@ -565,17 +593,19 @@ print(baby.gene) # XY
 #### **Public Access Modifier**
   - 언더바 없이 시작하는 메서드나 속성
   - 클래서 외부에서 언제, 누구든 호출이 가능, 하위 클래스 오버라이딩 허용
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/20a5b460-e38d-46da-9384-a3cb902ee805/Untitled.png)
+  
 #### **Protected Access Modifier**
   - 언더바 1개로 시작하는 메서드나 속성
   - 암묵적 규칙에 의해 부모 클래스 내부와 자식 클래스에서만 호출 가능
   - 하위클래스 override 허용
 	- 클래스 외부에서 수정 불가(하지만 python에서는 로직상 문제X)
+
 #### **Private Access Modifier**
   - 언더바 2개로 시작하는 메서드나 속성
   - 본 클래스 내부에서만 사용 가능 **외부에서 접근 및 수정 절대 불가**
   - 하위클래스 상속 및 호출 불가능 `오류`
   - 외부 호출 불가능 `오류`
+	
 #### `getter` `setter` 메서드 (다이렉트로 데이터에 접근하는 것을 막기위해)
   - 변수에 접근할 수 있는 메서드 별도 생성
     - `getter` 변수 값을 읽는 메서드
@@ -583,3 +613,32 @@ print(baby.gene) # XY
     - `setter` 변수 값 설정
       - `@변수.setter` 사용
 
+```python
+class Person:
+	def __init__(self, age):
+		self.age_age = age # Protected Access Modifier
+
+	@property
+	def age(self):
+		return self._age
+	
+	@age.setter
+	def age(self, new_age):
+		if new_age <= 19:
+			raise ValueError('Too Young!!')
+			return
+
+		self._age = new_age
+
+p1 = Person(20)
+print(p1.age) # 20
+
+p1.age = 33
+print(p1.age) # 33
+
+p1.age = 19
+print(p1.age) # ValueError : Too Young!!
+
+# 나이가 19 이하면 안된다는 조건이 하나 걸려있기 때문에
+# 19이하인 값으로 변경하면 오류 발생
+```
