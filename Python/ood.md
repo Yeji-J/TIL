@@ -57,7 +57,7 @@
 ### 객체(Object)
 
 - 타입(Type) : 어떤 연산자(operator)와 조작(method)이 가능한다?
-- 속성(.attribute) : 어떤 상태(데이터)를 가지는가?
+- 속성(attribute) : 어떤 상태(데이터)를 가지는가?
 - 조작법(method) : 어떤 행위(함수)를 할 수 있는가?
 - **객체 = 속성(attribute) + 기능(method)**
 
