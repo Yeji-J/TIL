@@ -136,7 +136,7 @@ print(desert)
 
     add(x = 2, y = 5)
     add(2, y = 5)
-    **add (x, y = 5) # Error !!**
+    **add (x=2, y) # Error !!**
     ```
 
   - **Default Arguments Values**
