@@ -186,7 +186,7 @@ print(desert)
   ```
   ```python
   numbers = (1, 2, 3, 4, 5) # 5개 초과의 변수에는 할당 불가 작거나 같아야 함
-  **a, *rest, b = numbers # asterisk(*)**
+  a, *rest, b = numbers # asterisk(*)
   # a = 1 b = 5 rest = [2, 3, 4]
   ```
   ***
